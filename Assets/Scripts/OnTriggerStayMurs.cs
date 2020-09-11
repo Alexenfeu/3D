@@ -10,7 +10,7 @@ public class OnTriggerStayMurs : MonoBehaviour
     {
         sphere.isImpacted = true;
         sphere.colObject = col.gameObject;
-        Debug.Log("Impact de "+ col.gameObject.name +"!");
+        //Debug.Log("Impact de "+ col.gameObject.name +"!");
 
     }
 
@@ -21,9 +21,9 @@ public class OnTriggerStayMurs : MonoBehaviour
         Debug.Log(col.gameObject.name + " est dedans !");
     }*/
 
-    void OnCollisionExit(Collision col)
+    /*void OnCollisionExit(Collision col)
     {
-        //sphere.isExited = true;
+        sphere.isExited = true;
         Debug.Log("Sortie !");
-    }
+    }*/
 }

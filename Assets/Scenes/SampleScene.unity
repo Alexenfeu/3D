@@ -1243,8 +1243,10 @@ MonoBehaviour:
   vitesse: 5
   myPrefab: {fileID: 3511800053891358612, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
   colObject: {fileID: 0}
+  ping: {fileID: 8300000, guid: 103ce4dad69ba5646b4cc7db666a1103, type: 3}
   isImpacted: 0
   isStayed: 0
+  isExited: 0
   r: {fileID: 970114418}
   list: []
 --- !u!4 &1857807060
