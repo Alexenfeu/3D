@@ -110,7 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06179b56d1185354c958a21c3bf81d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vitesse: 0
   myPrefab: {fileID: 3511800053891358612}
+  colObject: {fileID: 0}
   isImpacted: 0
   isStayed: 0
   r: {fileID: 3511800053891358605}
@@ -166,7 +168,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

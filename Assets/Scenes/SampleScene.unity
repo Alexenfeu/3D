@@ -147,7 +147,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79414335}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -365,7 +365,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155985530}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -457,7 +457,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -549,7 +549,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825333349}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -1426,19 +1426,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3511800053891358606, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
       propertyPath: m_Color.r
-      value: 0.16420436
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511800053891358606, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
       propertyPath: m_Color.g
-      value: 0.7735849
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511800053891358606, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
       propertyPath: m_Color.b
-      value: 0.19519596
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511800053891358606, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
       propertyPath: m_Type
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511800053891358606, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3511800053891358607, guid: e40977f128e072048bac1faa418fbfcf, type: 3}
       propertyPath: myPrefab

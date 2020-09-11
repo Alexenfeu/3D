@@ -11,6 +11,7 @@ public class MoveSphere : MonoBehaviour
     public bool isStayed = false;
     public Rigidbody r;
     public List<GameObject> list = new List<GameObject>();
+    int couleur = 0;
 
     void Start()
     {
@@ -27,6 +28,22 @@ public class MoveSphere : MonoBehaviour
         //|| isStayed == true
         if (isImpacted == true)
         {
+            int modulo = couleur % 4;
+            switch (modulo)
+            {
+                case 0:
+                    colObject.GetComponent<Light>().color = Color.red;
+                    break;
+                case 1:
+                    colObject.GetComponent<Light>().color = Color.blue;
+                    break;
+                case 2:
+                    colObject.GetComponent<Light>().color = Color.magenta;
+                    break;
+                case 3:
+                    colObject.GetComponent<Light>().color = Color.yellow;
+                    break;
+            }
             int i = Random.Range(-10, 10);
             int j = Random.Range(-10, 10);
             int k = Random.Range(-10, 10);
@@ -34,6 +51,7 @@ public class MoveSphere : MonoBehaviour
             colObject.GetComponent<Rigidbody>().AddForce(colObject.GetComponent<Rigidbody>().velocity, ForceMode.Force);
             //this.myPrefab.GetComponent<Rigidbody>().AddExplosionForce(1.0f, this.myPrefab.GetComponent<Rigidbody>().position, 1.0f);
             isImpacted = false;
+            couleur++;
         }
 
         /*if (isStayed == true)
