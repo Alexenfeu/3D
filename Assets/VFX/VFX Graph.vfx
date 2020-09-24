@@ -920,7 +920,7 @@ MonoBehaviour:
   capacity: 5000
   stripCapacity: 16
   particlePerStripCount: 16
-  m_Space: 0
+  m_Space: 1
 --- !u!114 &8926484042661614749
 MonoBehaviour:
   m_ObjectHideFlags: 0

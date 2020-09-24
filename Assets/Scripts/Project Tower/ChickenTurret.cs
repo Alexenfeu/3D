@@ -10,12 +10,14 @@ public class ChickenTurret : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountDown = 0f;
     public GameObject turretPrefab;
+    private GameObject turret;
     public GameObject bulletPrefab;
     public Transform firePoint;
     //public Transform partToRotate;
     // Start is called before the first frame update
     void Start()
     {
+        turret = (GameObject)Instantiate(turretPrefab, new Vector3(15f, 1.5f, 15f), Quaternion.identity);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -27,7 +29,7 @@ public class ChickenTurret : MonoBehaviour
 
         foreach(GameObject ball in ballsOfLife)
         {
-            float distanceToBall = Vector3.Distance(turretPrefab.transform.position, ball.transform.position);
+            float distanceToBall = Vector3.Distance(turret.transform.position, ball.transform.position);
             if( distanceToBall < shortestDistance)
             {
                 shortestDistance = distanceToBall;
@@ -53,10 +55,10 @@ public class ChickenTurret : MonoBehaviour
             return;
         }
 
-        Vector3 dir = target.transform.position - turretPrefab.transform.position;
+        Vector3 dir = target.transform.position - turret.transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        turretPrefab.transform.rotation = Quaternion.Euler(0f, rotation.y + 90, 0f);
+        turret.transform.rotation = Quaternion.Euler(0f, rotation.y + 90, 0f);
 
         if(fireCountDown <= 0f)
         {
@@ -80,6 +82,6 @@ public class ChickenTurret : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(turret.transform.position, range);
     }
 }

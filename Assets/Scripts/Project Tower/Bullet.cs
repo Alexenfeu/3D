@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Bullet : MonoBehaviour
     private GameObject target;
     private float currentLifeTarget;
     private float initialLifeTarget;
+    private float ratio;
     public float power = 10f;
     public float speed = 70f;
 
@@ -16,19 +18,6 @@ public class Bullet : MonoBehaviour
         target = _target;
     }
 
-
-    /*public void LookForInitialLife(float _lifeTarget)
-    {
-        initialLifeTarget = _lifeTarget;
-    }
-
-    public void LookForCurrentLife(float _lifeTarget)
-    {
-        currentLifeTarget = _lifeTarget;
-    }*/
-
-
-    // Update is called once per frame
     void Update()
     {
         if(target == null)
@@ -46,10 +35,11 @@ public class Bullet : MonoBehaviour
             BallOfLife ball = target.GetComponent<BallOfLife>();
             initialLifeTarget = ball.GetInitialLife();
             currentLifeTarget = ball.GetCurrentLife();
+            Debug.Log("Position : " + ball.gameObject.transform.position);
             currentLifeTarget -= power;
             ball.SetCurrentLife(currentLifeTarget);
             Debug.Log("Vie : " + ball.GetCurrentLife());
-            float ratio = currentLifeTarget / initialLifeTarget * 100;
+            ratio = currentLifeTarget / initialLifeTarget * 100;
             if (ratio > 0)
             {
                 target.gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor", Color.black);
@@ -70,6 +60,9 @@ public class Bullet : MonoBehaviour
                 target.gameObject.GetComponent<Renderer>().material.SetColor("_BaseColor", Color.green);
                 //target.gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", Resources.Load("Assets/Resources/Materials/MidLifeSup.mat") as Material);
             }
+            float valueBar = ratio/100;
+            target.GetComponentInChildren<Canvas>().GetComponentInChildren<Slider>().SetValueWithoutNotify(valueBar);
+            Debug.Log(valueBar);
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
